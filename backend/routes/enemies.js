@@ -7,7 +7,6 @@ const stringAndParse = require('../helpers/stringAndParse')
 
 // middleware that is specific to this router
 const timeLog = (_req, _res, next) => {
-  console.log('Time: ', Date.now())
   next()
 }
 
