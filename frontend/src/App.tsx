@@ -1,13 +1,12 @@
-import './App.css'
-import { EnemiesScreen } from './screens/enemies'
+import "./App.css";
+import { EnemiesScreen } from "./screens/enemies";
 
 function App() {
-
   return (
-    <div className='main-app-container'>
+    <div className="main-app-container">
       <EnemiesScreen />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

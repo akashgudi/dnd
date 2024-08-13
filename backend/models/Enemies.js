@@ -1,13 +1,13 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes } = require("sequelize");
 
 const sqlDebugLogging = () => {
-  return (process.env.LOGGER_LEVEL === "debug")
-}
+  return process.env.LOGGER_LEVEL === "debug";
+};
 
-const sequelize = new Sequelize('sqlite:sqlite/enemies.list', {
-  logging: sqlDebugLogging()
+const sequelize = new Sequelize("sqlite:sqlite/enemies.list", {
+  logging: sqlDebugLogging(),
 });
-const Enemy = sequelize.define('Enemy', {
+const Enemy = sequelize.define("Enemy", {
   enemyType: DataTypes.STRING,
   hitPoints: DataTypes.INTEGER,
   hpScaling: DataTypes.STRING,
@@ -19,4 +19,4 @@ const Enemy = sequelize.define('Enemy', {
   // Code here
 })();
 
-module.exports = Enemy
+module.exports = Enemy;

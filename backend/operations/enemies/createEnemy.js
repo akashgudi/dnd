@@ -1,4 +1,4 @@
 const createEnemy = async (modelObject) => {
-    await modelObject.save()
-}
-module.exports = { createEnemy }
+  await modelObject.save();
+};
+module.exports = { createEnemy };

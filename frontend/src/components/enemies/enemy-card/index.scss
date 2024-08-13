@@ -1,21 +1,21 @@
 .enemy-card {
-    @include pt-serif-regular;
-    padding: 16px 32px;
-    border-radius: 8px;
+  @include pt-serif-regular;
+  padding: 16px 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: fit-content;
+
+  .enemy-line {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background-color: rgba(255, 255, 255, 0.5);
-    height: fit-content;
+    justify-content: space-between;
+    align-items: flex-end;
 
-    .enemy-line {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-
-        .label {
-            font-size: 12px;
-            color: rgb(85, 85, 85);
-        }
+    .label {
+      font-size: 12px;
+      color: rgb(85, 85, 85);
     }
+  }
 }

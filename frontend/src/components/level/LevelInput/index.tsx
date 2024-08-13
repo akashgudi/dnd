@@ -1,16 +1,24 @@
-import { ChangeEventHandler } from "react"
-import './index.scss'
+import { ChangeEventHandler } from "react";
+import "./index.scss";
 
 interface LevelInputProps {
-    max: number,
-    onChange: ChangeEventHandler<HTMLInputElement>
+  max: number;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 }
 export const LevelInput = ({ max, onChange }: LevelInputProps) => {
-    const handleValue: ChangeEventHandler<HTMLInputElement> = (e) => {
-        if (Number(e.target.value) > max) {
-            e.target.value = String(max) // event being hijacked, may not be the best way to handle this
-        }
-        onChange(e)
+  const handleValue: ChangeEventHandler<HTMLInputElement> = (e) => {
+    if (Number(e.target.value) > max) {
+      e.target.value = String(max); // event being hijacked, may not be the best way to handle this
     }
-    return <input type="number" max={max} onChange={handleValue} placeholder={`Max Lvl.${max}`} className="level-input"/>
-}
+    onChange(e);
+  };
+  return (
+    <input
+      type="number"
+      max={max}
+      onChange={handleValue}
+      placeholder={`Max Lvl.${max}`}
+      className="level-input"
+    />
+  );
+};
