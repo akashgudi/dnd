@@ -3,9 +3,10 @@ const router = express.Router()
 const Enemy = require('../models/Enemies')
 const { createEnemy } = require('../operations/enemies/createEnemy')
 const { getAllEnemies } = require('../operations/enemies/getEnemies')
+const stringAndParse = require('../helpers/stringAndParse')
 
 // middleware that is specific to this router
-const timeLog = (req, res, next) => {
+const timeLog = (_req, _res, next) => {
   console.log('Time: ', Date.now())
   next()
 }
@@ -13,16 +14,17 @@ const timeLog = (req, res, next) => {
 router.use(timeLog)
 
 // define the home page route
-router.get('/', (req, res) => {
-  enemies = getAllEnemies()
-  console.log("enemies",enemies)
-  res.send(JSON.stringify(enemies))
+router.get('/', (_req, res) => {
+  getAllEnemies().then(enemies => {
+    console.log("enemies", enemies)
+    res.send({ enemies: stringAndParse(enemies) })
+  })
 })
 // define the about route
-router.get('/create', (req, res) => {
+router.get('/create', (_req, res) => {
   let newEnemy = Enemy.build({ enemyType: 'Jane' })
-  createEnemy(newEnemy)
-  res.send({'sts' : `create new enemy ${newEnemy.enemyType}`})
+  createEnemy(newEnemy).then(() => res.send({ 'sts': `create new enemy ${newEnemy.enemyType}` })
+  )
 })
 
 module.exports = router
