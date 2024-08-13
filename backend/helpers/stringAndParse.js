@@ -1,5 +1,5 @@
 const stringAndParse = (jsonObject) => {
-    return JSON.parse(JSON.stringify(jsonObject))
-}
+  return JSON.parse(JSON.stringify(jsonObject));
+};
 
-module.exports = stringAndParse
+module.exports = stringAndParse;

@@ -1,6 +1,9 @@
 interface Enemy {
-    enemyType: string,
-    hitPints: number
+  enemyType: string;
+  level: number;
+  hitPoints: number;
+  hpScaling: string;
+  damageDice: string;
 }
 
 export default Enemy;
