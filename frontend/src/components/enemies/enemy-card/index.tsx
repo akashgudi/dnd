@@ -9,8 +9,9 @@ export const EnemyCard = (enemy: Enemy) => {
     }
     const { enemyType, hitPoints } = enemy
     return <div className='enemy-cards'>
-        {enemyType}
-        <LevelInput max={10} onChange={handleLevelChange} />
+        <div>class {enemyType}
+            <LevelInput max={10} onChange={handleLevelChange} />
+        </div>
         {hitPoints}
     </div>
 }
