@@ -1,6 +1,6 @@
 interface Enemy {
     enemyType: string,
-    hitPints: number
+    hitPoints: number
 }
 
 export default Enemy;
