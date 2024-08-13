@@ -14,21 +14,21 @@ export const EnemyCard = (enemy: Enemy) => {
   return (
     <div className="enemy-card">
       <div className="enemy-line">
-        <div>
+        <div className="enemy-property">
           <div className="label">Class</div>
           <div>{enemyType}</div>
         </div>
-        <div>
+        <div className="enemy-property">
           <div className="label">Level</div>
           <LevelInput max={10} onChange={handleLevelChange} />
         </div>
       </div>
       <div className="enemy-line">
-        <div>
+        <div className="enemy-property">
           <div className="label">Hit Points</div>
           {getHP(enemy, level)}
         </div>
-        <div>
+        <div className="enemy-property">
           <div className="label">Damage Dice</div>
           {damageDice}
         </div>

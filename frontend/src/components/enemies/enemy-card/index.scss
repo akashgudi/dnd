@@ -13,9 +13,13 @@
     justify-content: space-between;
     align-items: flex-end;
 
-    .label {
-      font-size: 12px;
-      color: rgb(85, 85, 85);
+    .enemy-property {
+      width: 100%;
+
+      .label {
+        font-size: 12px;
+        color: rgb(85, 85, 85);
+      }
     }
   }
 }
