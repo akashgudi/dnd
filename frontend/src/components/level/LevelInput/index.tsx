@@ -16,6 +16,7 @@ export const LevelInput = ({ max, onChange }: LevelInputProps) => {
     <input
       type="number"
       max={max}
+      defaultValue={1}
       onChange={handleValue}
       placeholder={`Max Lvl.${max}`}
       className="level-input"

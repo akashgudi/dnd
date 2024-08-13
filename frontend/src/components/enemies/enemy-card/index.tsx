@@ -16,6 +16,7 @@ export const EnemyCard = (enemy: Enemy) => {
 
   const handleDragEnd: DragEventHandler<HTMLDivElement>  = (e) => {
     alert("drag")
+    console.log(e)
         
   }
   const { enemyType, damageDice } = enemy;
