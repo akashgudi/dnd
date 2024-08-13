@@ -1,5 +1,6 @@
 interface Enemy {
     enemyType: string,
+    level: number,
     hitPoints: number
 }
 
