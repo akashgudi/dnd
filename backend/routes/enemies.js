@@ -21,10 +21,12 @@ router.get('/', (_req, res) => {
   })
 })
 // define the about route
-router.get('/create', (_req, res) => {
-  let newEnemy = Enemy.build({ enemyType: 'Jane' })
-  createEnemy(newEnemy).then(() => res.send({ 'sts': `create new enemy ${newEnemy.enemyType}` })
-  )
+router.post('/create', (_req, res) => {
+  console.log(_req.body)
+  res.send({})
+  // let newEnemy = Enemy.build({ enemyType: 'Jane' })
+  // createEnemy(newEnemy).then(() => res.send({ 'sts': `create new enemy ${newEnemy.enemyType}` })
+  // )
 })
 
 module.exports = router
