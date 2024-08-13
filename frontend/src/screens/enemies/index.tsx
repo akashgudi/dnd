@@ -1,11 +1,12 @@
+import { useAtom } from "jotai";
 import { useEffect } from "react";
-import "./index.scss";
+import { CreateEnemyCard } from "../../components/enemies/create-enemy";
+import { EnemyCard } from "../../components/enemies/enemy-card";
+import { Enemy } from "../../interfaces";
+import { enemyAtom } from "../../state/enemiesAtom";
 import { getEndpoint } from "../../utils/getEndpoint";
 import { getHeaders } from "../../utils/getHeaders";
-import { Enemy } from "../../interfaces";
-import { EnemyCard } from "../../components/enemies/enemy-card";
-import { useAtom } from "jotai";
-import { enemyAtom } from "../../state/enemiesAtom";
+import "./index.scss";
 
 export const EnemiesScreen = () => {
   const [enemies, setEnemies] = useAtom(enemyAtom);
@@ -21,6 +22,7 @@ export const EnemiesScreen = () => {
       {enemies.map((enemy: Enemy) => (
         <EnemyCard {...enemy} />
       ))}
+      <CreateEnemyCard />
     </div>
   );
 };
