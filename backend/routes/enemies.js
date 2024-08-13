@@ -15,13 +15,11 @@ router.use(timeLog)
 // define the home page route
 router.get('/', (_req, res) => {
   getAllEnemies().then(enemies => {
-    console.log("enemies", enemies)
     res.send({ enemies: stringAndParse(enemies) })
   })
 })
 // define the about route
 router.post('/create', (_req, res) => {
-  console.log(_req.body)
   res.send({})
   // let newEnemy = Enemy.build({ enemyType: 'Jane' })
   // createEnemy(newEnemy).then(() => res.send({ 'sts': `create new enemy ${newEnemy.enemyType}` })
