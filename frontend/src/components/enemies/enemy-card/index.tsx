@@ -1,7 +1,7 @@
 import "./index.scss";
 import { Enemy } from "../../../interfaces";
 import { LevelInput } from "../../level/LevelInput";
-import { ChangeEventHandler, useState } from "react";
+import { ChangeEventHandler, DragEventHandler, useState } from "react";
 import { getHP } from "../../../utils/enemies/getHP";
 
 export const EnemyCard = (enemy: Enemy) => {
@@ -10,9 +10,17 @@ export const EnemyCard = (enemy: Enemy) => {
     console.log(e.target.value);
     setLevel(Number(e.target.value));
   };
+  const handleDrag: DragEventHandler<HTMLDivElement>  = (e) => {
+    console.log(e)
+  }
+
+  const handleDragEnd: DragEventHandler<HTMLDivElement>  = (e) => {
+    alert("drag")
+        
+  }
   const { enemyType, damageDice } = enemy;
   return (
-    <div className="enemy-card">
+    <div className="enemy-card" draggable onDragStart={handleDrag} onDrop={handleDragEnd}>
       <div className="enemy-line">
         <div className="enemy-property">
           <div className="label">Class</div>
